@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 
 /**
- * ProtectedRoute component to secure routes based on authentication and role
+ 
  * @param {ReactNode} children - Component to render if authorized
  * @param {Array<string>} allowedRoles - Array of roles allowed to access this route (e.g., ['ADMIN', 'USER', 'ANALYST'])
  */
@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children, allowedRoles = [] }) => {
   const token = localStorage.getItem('token');
   const userRole = localStorage.getItem('role');
 
-  // Check if user is authenticated
+  
   if (!token) {
     // Not logged in, redirect to login page
     return <Navigate to="/login" replace />;
@@ -17,7 +17,6 @@ const ProtectedRoute = ({ children, allowedRoles = [] }) => {
 
   // Check if user has the required role
   if (allowedRoles.length > 0 && !allowedRoles.includes(userRole)) {
-    // User doesn't have permission, redirect to their appropriate dashboard
     switch (userRole) {
       case 'ADMIN':
         return <Navigate to="/admindashboard" replace />;
