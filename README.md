@@ -345,6 +345,8 @@ This project is developed as part of the Springboard mentorship program.
 
 Global IP Intelligence Platform - Group A
 
+Contribution by Shanu Ahmed
+
 ## 📞 Support
 
 For issues and questions, please create an issue in the GitHub repository.
